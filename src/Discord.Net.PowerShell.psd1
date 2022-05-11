@@ -33,7 +33,7 @@
     Description       = 'A PowerShell wrapper for Discord.Net'
 
     # Minimum version of the PowerShell engine required by this module
-    PowerShellVersion = '7'
+    PowerShellVersion = '7.0'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
