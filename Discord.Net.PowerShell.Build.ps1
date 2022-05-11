@@ -22,7 +22,7 @@ task Clean {
 }
 
 # Build the docs, depends on PlatyPS
-task DocBuild ModuleBuild,{
+task DocBuild ModuleBuild, {
     if (-not (Test-Path $docPath)) {
         New-Item $docPath -ItemType Directory
     }
@@ -37,7 +37,7 @@ task ModuleBuild Clean, {
     }
 
     # Add using.ps1 to the .psm1 first
-    foreach ($file in $moduleScriptFiles | ?{$_.Name -eq 'using.ps1'}) {
+    foreach ($file in $moduleScriptFiles | Where-Object { $_.Name -eq 'using.ps1' }) {
         if ($file.fullname) {
             Write-Host "Adding using file: '$($file.Fullname)'"
             Get-Content $file.fullname | Out-File "$modulePath\$moduleName.psm1" -Append -Encoding utf8
@@ -45,7 +45,7 @@ task ModuleBuild Clean, {
     }
 
     # Add all .ps1 files to the .psm1, skipping onload.ps1, using.ps1, and any tests
-    foreach ($file in $moduleScriptFiles | ?{$_.Name -ne 'onload.ps1' -and $_.Name -ne 'using.ps1' -and $_.FullName -notmatch '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$'}) {
+    foreach ($file in $moduleScriptFiles | Where-Object { $_.Name -ne 'onload.ps1' -and $_.Name -ne 'using.ps1' -and $_.FullName -notmatch '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$' }) {
         if ($file.fullname) {
             Write-Host "Adding function file: '$($file.FullName)'"
             Get-Content $file.fullname | Out-File "$modulePath\$moduleName.psm1" -Append -Encoding utf8
@@ -53,27 +53,30 @@ task ModuleBuild Clean, {
     }
     
     # Add the onload.ps1 files last
-    foreach ($file in $moduleScriptFiles | ?{$_.Name -eq 'onload.ps1'}) {
+    foreach ($file in $moduleScriptFiles | Where-Object { $_.Name -eq 'onload.ps1' }) {
         if ($file.fullname) {
             Write-Host "Adding onload file: '$($file.FullName)'"
             Get-Content $file.fullname | Out-File "$modulePath\$moduleName.psm1" -Append -Encoding utf8
         }
     }
 
+    # Copy the .dlls
+    Copy-Item $PSScriptRoot\lib -Destination $modulePath
+
     # Copy the manifest
     Copy-Item "$srcPath\$moduleName.psd1" -Destination $modulePath
 
     # Copy the tests
-    foreach($test in ($moduleScriptFiles | Where-Object {$_.FullName -match '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$'})) {
+    foreach ($test in ($moduleScriptFiles | Where-Object { $_.FullName -match '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$' })) {
         Write-Host "Copying test file: '$($test.FullName)'"
         Copy-Item $test.FullName -Destination $modulePath
     }
 
     $moduleManifestData = @{
-        Path = "$modulePath\$moduleName.psd1"
+        Path              = "$modulePath\$moduleName.psd1"
         # Only export the public files
-        FunctionsToExport = ($moduleScriptFiles | Where-Object {$_.FullName -match "(\\|\/)public(\\|\/)[^\.]+\.ps1$"}).basename
-        ModuleVersion = $version
+        FunctionsToExport = ($moduleScriptFiles | Where-Object { $_.FullName -match "(\\|\/)public(\\|\/)[^\.]+\.ps1$" }).basename
+        ModuleVersion     = $version
     }
     if ($null -ne $preRelease) {
         $moduleManifestData['Prerelease'] = $preRelease
@@ -81,7 +84,7 @@ task ModuleBuild Clean, {
     Update-ModuleManifest @moduleManifestData
 }
 
-Task Test ModuleBuild, {
+task Test ModuleBuild, {
     Write-Host "Importing module."
     Import-Module $modulePath -RequiredVersion $version
     Write-Host "Invoking tests."
