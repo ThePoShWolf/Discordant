@@ -61,7 +61,7 @@ task ModuleBuild Clean, {
     }
 
     # Copy the .dlls
-    Copy-Item $PSScriptRoot\lib -Destination $modulePath
+    Copy-Item $PSScriptRoot\lib -Destination $modulePath -Recurse -Force -ErrorAction SilentlyContinue
 
     # Copy the manifest
     Copy-Item "$srcPath\$moduleName.psd1" -Destination $modulePath
