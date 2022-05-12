@@ -1,4 +1,4 @@
-Function Get-DnGuildCommand {
+Function Get-DiscordGuildCommand {
     [cmdletbinding(
         DefaultParameterSetName = 'all'
     )]

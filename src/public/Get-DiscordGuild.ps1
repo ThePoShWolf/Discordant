@@ -1,4 +1,4 @@
-Function Get-DnGlobalCommand {
+Function Get-DiscordGuild {
     [cmdletbinding(
         DefaultParameterSetName = 'all'
     )]
@@ -7,14 +7,14 @@ Function Get-DnGlobalCommand {
             ParameterSetName = 'byId'
         )]
         [UInt64]$Id,
-        [Discord.RequestOptions]$RequestOptions
+        [Discord.RequestOptions]$RequestOptions = $null
     )
     switch ($PSCmdlet.ParameterSetName) {
         'all' {
-            $DiscordClient.GetGlobalApplicationCommandsAsync($RequestOptions).Wait().Result
+            $DiscordClient.GetGuildsAsync($RequestOptions).Wait().Result
         }
         'byId' {
-            $DiscordClient.GetGlobalApplicationCommandAsync($Id, $RequestOptions).Wait().Result
+            $DiscordClient.GetGuildAsync($Id, $RequestOptions).Wait().Result
         }
     }
 }
