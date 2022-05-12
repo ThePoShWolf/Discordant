@@ -6,15 +6,18 @@ Function Get-DiscordGlobalCommand {
         [Parameter(
             ParameterSetName = 'byId'
         )]
+        [ValidateNotNullOrEmpty()]
         [UInt64]$Id,
         [Discord.RequestOptions]$RequestOptions
     )
     switch ($PSCmdlet.ParameterSetName) {
         'all' {
-            $DiscordClient.GetGlobalApplicationCommandsAsync($RequestOptions).Wait().Result
+            $task = $DiscordClient.GetGlobalApplicationCommandsAsync($RequestOptions)
         }
         'byId' {
-            $DiscordClient.GetGlobalApplicationCommandAsync($Id, $RequestOptions).Wait().Result
+            $task = $DiscordClient.GetGlobalApplicationCommandAsync($Id, $RequestOptions)
         }
     }
+    $task.Wait()
+    $task.Result
 }

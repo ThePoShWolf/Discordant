@@ -7,20 +7,24 @@ Function New-DiscordGuildCommand {
             Mandatory,
             ParameterSetName = 'byId'
         )]
+        [ValidateNotNullOrEmpty()]
         [UInt64]$GuildId,
         [Parameter(
             Mandatory,
             ParameterSetName = 'byObj'
         )]
+        [ValidateNotNullOrEmpty()]
         [Discord.Rest.RestGuild]$Guild,
         [Discord.ApplicationCommandType]$Type = 'Slash',
         [Parameter(
             Mandatory
         )]
+        [ValidateNotNullOrEmpty()]
         [string]$Name,
         [Parameter(
             Mandatory
         )]
+        [ValidateNotNullOrEmpty()]
         [string]$Description
     )
     if ($PSCmdlet.ParameterSetName -eq 'byId') {
@@ -37,5 +41,7 @@ Function New-DiscordGuildCommand {
             Throw "Command type '$Type' not yet implemented in module."
         }
     }
-    $Guild.CreateApplicationCommandAsync($cb.Build()).Wait().Result
+    $task = $Guild.CreateApplicationCommandAsync($cb.Build())
+    $task.Wait()
+    $task.Result
 }

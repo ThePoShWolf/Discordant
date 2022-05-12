@@ -6,11 +6,13 @@ Function Get-DiscordGuildCommand {
         [Parameter(
             Mandatory
         )]
+        [ValidateNotNullOrEmpty()]
         [UInt64]$GuildId,
         [Parameter(
             Mandatory,
             ParameterSetName = 'byId'
         )]
+        [ValidateNotNullOrEmpty()]
         [UInt64]$CommandId,
         [Discord.RequestOptions]$RequestOptions
     )

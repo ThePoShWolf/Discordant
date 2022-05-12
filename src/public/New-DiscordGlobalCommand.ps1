@@ -5,10 +5,12 @@ Function New-DiscordGlobalCommand {
         [Parameter(
             Mandatory
         )]
+        [ValidateNotNullOrEmpty()]
         [string]$Name,
         [Parameter(
             Mandatory
         )]
+        [ValidateNotNullOrEmpty()]
         [string]$Description
     )
 
@@ -22,5 +24,7 @@ Function New-DiscordGlobalCommand {
             Throw "Command type '$Type' not yet implemented in module."
         }
     }
-    $DiscordClient.CreateGlobalApplicationCommand($cb.Build()).Wait().Result
+    $task = $DiscordClient.CreateGlobalApplicationCommand($cb.Build())
+    $task.Wait()
+    $task.Result
 }

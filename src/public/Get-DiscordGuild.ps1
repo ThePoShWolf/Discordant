@@ -6,15 +6,18 @@ Function Get-DiscordGuild {
         [Parameter(
             ParameterSetName = 'byId'
         )]
+        [ValidateNotNullOrEmpty()]
         [UInt64]$Id,
         [Discord.RequestOptions]$RequestOptions = $null
     )
     switch ($PSCmdlet.ParameterSetName) {
         'all' {
-            $DiscordClient.GetGuildsAsync($RequestOptions).Wait().Result
+            $task = $DiscordClient.GetGuildsAsync($RequestOptions)
         }
         'byId' {
-            $DiscordClient.GetGuildAsync($Id, $RequestOptions).Wait().Result
+            $task = $DiscordClient.GetGuildAsync($Id, $RequestOptions)
         }
     }
+    $task.Wait()
+    $task.Result
 }
