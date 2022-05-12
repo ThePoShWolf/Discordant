@@ -26,8 +26,7 @@ Function Connect-Discord {
             $global:DiscordClient = [Discord.WebSocket.DiscordSocketClient]::new()
         }
     }
-    $task = $DiscordClient.LoginAsync($TokenType, $Token, $true)
-    $task.Wait()
+    $DiscordClient.LoginAsync($TokenType, $Token, $true).Wait()
     if (-not $Quiet.IsPresent) {
         $DiscordClient.LoginState
     }

@@ -11,12 +11,10 @@ Function Get-DnGlobalCommand {
     )
     switch ($PSCmdlet.ParameterSetName) {
         'all' {
-            $task = $DiscordClient.GetGlobalApplicationCommandsAsync($RequestOptions)
+            $DiscordClient.GetGlobalApplicationCommandsAsync($RequestOptions).Wait().Result
         }
         'byId' {
-            $task = $DiscordClient.GetGlobalApplicationCommandAsync($Id, $RequestOptions)
+            $DiscordClient.GetGlobalApplicationCommandAsync($Id, $RequestOptions).Wait().Result
         }
     }
-    $task.Wait()
-    $task.Result
 }

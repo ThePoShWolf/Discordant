@@ -11,12 +11,10 @@ Function Get-DnGuild {
     )
     switch ($PSCmdlet.ParameterSetName) {
         'all' {
-            $task = $DiscordClient.GetGuildsAsync($RequestOptions)
+            $DiscordClient.GetGuildsAsync($RequestOptions).Wait().Result
         }
         'byId' {
-            $task = $DiscordClient.GetGuildAsync($Id, $RequestOptions)
+            $DiscordClient.GetGuildAsync($Id, $RequestOptions).Wait().Result
         }
     }
-    $task.Wait()
-    $task.Result
 }
