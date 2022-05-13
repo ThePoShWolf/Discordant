@@ -1,4 +1,5 @@
 Function New-DiscordGlobalCommand {
+    [OutputType([Discord.Rest.RestGlobalCommand])]
     [cmdletbinding()]
     param (
         [Discord.ApplicationCommandType]$Type = 'Slash',

@@ -1,4 +1,6 @@
 Function Get-DiscordGlobalCommand {
+    [OutputType([Discord.Rest.RestApplicationCommand], ParameterSetName = 'byId')]
+    [OutputType([Discord.Rest.RestApplicationCommand[]], ParameterSetName = 'all')]
     [cmdletbinding(
         DefaultParameterSetName = 'all'
     )]

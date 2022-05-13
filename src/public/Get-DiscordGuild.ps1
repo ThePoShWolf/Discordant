@@ -1,4 +1,6 @@
 Function Get-DiscordGuild {
+    [OutputType([Discord.Rest.RestGuild], ParameterSetName = 'byId')]
+    [OutputType([Discord.Rest.RestGuild[]], ParameterSetName = 'all')]
     [cmdletbinding(
         DefaultParameterSetName = 'all'
     )]

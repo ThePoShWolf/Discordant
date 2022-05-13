@@ -1,4 +1,5 @@
 Function New-DiscordSlashCommand {
+    [OutputType([Discord.SlashCommandBuilder])]
     [cmdletbinding(
         DefaultParameterSetName = 'byId'
     )]

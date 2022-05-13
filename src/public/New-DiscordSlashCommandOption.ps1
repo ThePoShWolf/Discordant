@@ -1,4 +1,5 @@
 Function New-DiscordSlashCommandOption {
+    [OutputType([Discord.SlashCommandOptionBuilder])]
     [cmdletbinding()]
     param (
         [Parameter(
