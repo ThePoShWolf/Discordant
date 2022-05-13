@@ -24,6 +24,10 @@ Function New-DiscordSlashCommandOption {
         $co.IsAutocomplete = $IsAutocomplete.IsPresent
     }
 
+    if ($PSBoundParameters.Keys -contains 'Type') {
+        $co.Type = $Type
+    }
+
     if ($PSBoundParameters.Keys -contains 'Choices') {
         foreach ($key in $Choices.Keys) {
             $co.AddChoice($key, $Choices[$key]) | Out-Null

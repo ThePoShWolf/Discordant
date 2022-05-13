@@ -16,8 +16,8 @@ Function New-DiscordSlashCommand {
     $cb.Name = $Name
     $cb.Description = $Description
 
-    if ($PSBoundParameters.Keys -contains 'CommandOptions') {
-        $cb.Options = $CommandOptions
+    if ($PSBoundParameters.Keys -contains 'Options') {
+        $cb.Options = $Options
     }
 
     $cb
