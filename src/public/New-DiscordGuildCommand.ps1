@@ -1,7 +1,5 @@
 Function New-DiscordGuildCommand {
-    [cmdletbinding(
-        DefaultParameterSetName = 'byId'
-    )]
+    [cmdletbinding()]
     param (
         [Parameter(
             Mandatory,
@@ -15,33 +13,14 @@ Function New-DiscordGuildCommand {
         )]
         [ValidateNotNullOrEmpty()]
         [Discord.Rest.RestGuild]$Guild,
-        [Discord.ApplicationCommandType]$Type = 'Slash',
-        [Parameter(
-            Mandatory
-        )]
-        [ValidateNotNullOrEmpty()]
-        [string]$Name,
-        [Parameter(
-            Mandatory
-        )]
-        [ValidateNotNullOrEmpty()]
-        [string]$Description
+        [Discord.SlashCommandBuilder]$CommandBuilder
     )
+
     if ($PSCmdlet.ParameterSetName -eq 'byId') {
         $Guild = Get-DiscordGuild -Id $GuildId
     }
 
-    switch ($Type) {
-        'Slash' {
-            $cb = [Discord.SlashCommandBuilder]::new()
-            $cb.Name = $Name
-            $cb.Description = $Description
-        }
-        default {
-            Throw "Command type '$Type' not yet implemented in module."
-        }
-    }
-    $task = $Guild.CreateApplicationCommandAsync($cb.Build())
+    $task = $Guild.CreateApplicationCommandAsync($CommandBuilder.Build())
     $task.Wait()
     $task.Result
 }
