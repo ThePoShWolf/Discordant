@@ -1,18 +1,26 @@
 Function Get-DiscordChannel {
-    [OutputType([Discord.Rest.RestCategoryChannel[]], ParameterSetName = 'guildObj-all')]
-    [OutputType([Discord.Rest.RestCategoryChannel[]], ParameterSetName = 'guildId-all')]
-    [OutputType([Discord.Rest.RestCategoryChannel], ParameterSetName = 'guildObj-channelId')]
-    [OutputType([Discord.Rest.RestCategoryChannel], ParameterSetName = 'guildId-channelId')]
+    [OutputType([Discord.Rest.RestGuildChannel[]], ParameterSetName = 'guildObj-all')]
+    [OutputType([Discord.Rest.RestGuildChannel[]], ParameterSetName = 'guildId-all')]
+    [OutputType([Discord.Rest.RestGuildChannel], ParameterSetName = 'guildObj-channelId')]
+    [OutputType([Discord.Rest.RestGuildChannel], ParameterSetName = 'guildId-channelId')]#>
     [cmdletbinding()]
     param (
         [Parameter(
             Mandatory,
             ParameterSetName = 'guildObj-all'
         )]
+        [Parameter(
+            Mandatory,
+            ParameterSetName = 'guildObj-channelId'
+        )]
         [Discord.Rest.RestGuild]$Guild,
         [Parameter(
             Mandatory,
             ParameterSetName = 'guildId-all'
+        )]
+        [Parameter(
+            Mandatory,
+            ParameterSetName = 'guildId-channelId'
         )]
         [uint64]$GuildId,
         [Parameter(
