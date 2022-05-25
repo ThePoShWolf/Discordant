@@ -41,12 +41,9 @@ Function Get-DiscordGuildCommand {
     )
     $task = $DiscordClient.GetGuildApplicationCommands($GuildId, $RequestOptions)
     $task.Wait()
-    switch ($PSCmdlet.ParameterSetName) {
-        'all' {
-            $task.Result
-        }
-        'byId' {
-            $task.Result.Where({ $_.Id -eq $CommandId })
-        }
+    if ($PSCmdlet.ParameterSetName -like '*all') {
+        $task.Result
+    } else {
+        $task.Result.Where({ $_.Id -eq $CommandId })
     }
 }
