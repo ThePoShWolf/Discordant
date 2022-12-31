@@ -9,6 +9,7 @@ Function New-DiscordSlashCommandOption {
         [string]$Name,
         [string]$Description,
         [switch]$IsAutocomplete,
+        [switch]$Required,
         [hashtable]$Choices,
         [Discord.ApplicationCommandOptionType]$Type
 
@@ -23,6 +24,10 @@ Function New-DiscordSlashCommandOption {
 
     if ($PSBoundParameters.Keys -contains 'IsAutocomplete') {
         $co.IsAutocomplete = $IsAutocomplete.IsPresent
+    }
+
+    if ($Required.IsPresent) {
+        $co.IsRequired = $true
     }
 
     if ($PSBoundParameters.Keys -contains 'Type') {
