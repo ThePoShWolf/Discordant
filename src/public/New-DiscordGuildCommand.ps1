@@ -26,7 +26,8 @@ Function New-DiscordGuildCommand {
             Mandatory
         )]
         [ValidateNotNullOrEmpty()]
-        [string]$Description
+        [string]$Description,
+        [Discord.SlashCommandBuilder]$CommandBuilder
     )
     if ($PSCmdlet.ParameterSetName -eq 'byId') {
         $Guild = Get-DiscordGuild -Id $GuildId
@@ -34,9 +35,13 @@ Function New-DiscordGuildCommand {
 
     switch ($Type) {
         'Slash' {
-            $cb = [Discord.SlashCommandBuilder]::new()
-            $cb.Name = $Name
-            $cb.Description = $Description
+            if ($PSBoundParameters.Keys -notcontains 'CommandBuilder') {
+                $cb = [Discord.SlashCommandBuilder]::new()
+                $cb.Name = $Name
+                $cb.Description = $Description
+            } else {
+                $cb = $CommandBuilder
+            }
         }
         default {
             Throw "Command type '$Type' not yet implemented in module."
