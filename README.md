@@ -2,7 +2,7 @@
 
 PowerShell wrapper for [Discord.Net](https://github.com/discord-net/Discord.Net).
 
-This module was originally developed for personal use, but after presenting at the PowerShell Summit 2023 about a Discord Bot built in Azure Functions, I decided to rush this out and published it. It has a lot of rough edges, but supports enough things to manage a Discord bot. More functionality and polish will be added.
+This module was originally developed for personal use, but after presenting at the PowerShell Summit 2023 about a Discord Bot built in Azure Functions, I decided to rush this out and publish it. It has a lot of rough edges, but supports enough things to manage a Discord bot. More functionality and polish will be added.
 
 PRs encouraged!
 
