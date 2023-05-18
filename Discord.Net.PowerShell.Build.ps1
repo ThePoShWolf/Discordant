@@ -66,6 +66,9 @@ task ModuleBuild Clean, {
     # Copy the manifest
     Copy-Item "$srcPath\$moduleName.psd1" -Destination $modulePath
 
+    # Generate the formats
+    & $PSScriptRoot\Discord.Net.PowerShell.ezout.ps1 -RelativeDestination "build/$moduleName"
+
     # Copy the tests
     foreach ($test in ($moduleScriptFiles | Where-Object { $_.FullName -match '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$' })) {
         Write-Host "Copying test file: '$($test.FullName)'"
