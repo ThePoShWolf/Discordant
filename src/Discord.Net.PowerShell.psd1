@@ -60,7 +60,7 @@
     # ScriptsToProcess = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
-    # TypesToProcess = @()
+    TypesToProcess    = @('Discord.Net.PowerShell.types.ps1xml')
 
     # Format files (.ps1xml) to be loaded when importing this module
     FormatsToProcess  = @( 'Discord.Net.PowerShell.format.ps1xml' )

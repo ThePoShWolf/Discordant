@@ -44,5 +44,5 @@ Function Get-DiscordChannel {
         $Guild.GetChannelAsync($ChannelId, $RequestOptions)
     }
     $task.Wait()
-    $task.Result
+    $task.Result | Sort-Object { $_.GetType().Name }
 }

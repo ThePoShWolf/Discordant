@@ -1,0 +1,3 @@
+@{
+    'ChannelId' = 'Id'
+}

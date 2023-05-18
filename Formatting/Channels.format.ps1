@@ -1,0 +1,1 @@
+Write-FormatView -TypeName Discord.Rest.RestGuildChannel -Property @('ChannelId', 'Name') -GroupByProperty 'Type'
