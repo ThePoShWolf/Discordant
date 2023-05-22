@@ -23,7 +23,7 @@ Other:
 - Unit tests
 - Your request here
 
-## Funtionality Overview
+## Functionality Overview
 
 As of v0.1.0:
 
