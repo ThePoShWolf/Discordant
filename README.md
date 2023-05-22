@@ -2,7 +2,7 @@
 
 **(fka Discord.Net.PowerShell)**
 
-PowerShell module for managing Discord, including interactions.
+PowerShell module for managing Discord, including interactions. The module is built on top of [Discord.Net](https://github.com/discord-net/Discord.Net).
 
 This module was originally designed to provide the bare minimum functionality to support a Discord bot in PowerShell. However, there seems to be an interest in Discord management from PowerShell so this module is being extended to provide additional functionality.
 
