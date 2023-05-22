@@ -4,9 +4,34 @@
 
 PowerShell module for managing Discord, including interactions.
 
-This module was originally developed for personal use, but after presenting at the PowerShell Summit 2023 about a Discord Bot built in Azure Functions, I decided to rush this out and publish it. It has a lot of rough edges, but supports enough things to manage a Discord bot. More functionality and polish will be added.
+This module was originally designed to provide the bare minimum functionality to support a Discord bot in PowerShell. However, there seems to be an interest in Discord management from PowerShell so this module is being extended to provide additional functionality.
 
-PRs encouraged!
+If there is a feature you need, please submit an issue and/or submit a PR.
+
+## TODO
+
+Prioritized:
+
+- Add docs (PlatyPS)
+
+Other:
+
+- User management
+- Role management
+- Webhook management
+- Per type channel management (category, text, voice)
+- Your request here
+
+## Funtionality Overview
+
+As of v0.1.0:
+
+- Manage channels (add, get, remove, update)
+- Get roles
+- Get Guilds
+- Manage guild commands (get, create, remove)
+- Test and parse interactions
+- Send a message
 
 ## Installation
 
@@ -14,12 +39,20 @@ PRs encouraged!
 Install-Module Discordant
 ```
 
-## Example usage
+## Authentication
+
+At this time, all testing is done via a bot with full admin permissions to a test Discord server. When the docs are written, each cmdlet will include the required permissions in order to execute.
+
+Authentication is done with:
 
 ```powershell
 # Authenticate with bot token (from Discord dev portal):
 Connect-Discord -RestClient -TokenType Bot -Token '<token>'
+```
 
+## Example usage
+
+```powershell
 # Get your guild (server):
 $guild = Get-DiscordGuild | Where-Object { $_.Name -eq 'Bot Testing' }
 
