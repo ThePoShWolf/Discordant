@@ -20,6 +20,7 @@ Other:
 - Role management
 - Webhook management
 - Per type channel management (category, text, voice)
+- Unit tests
 - Your request here
 
 ## Funtionality Overview
