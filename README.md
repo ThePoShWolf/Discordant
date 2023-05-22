@@ -36,7 +36,7 @@ New-DiscordGuildCommand -Name 'start-server' -Description 'Start a server' -Guil
 
 ## Changelog
 
-### 0.0.2 - Renamed to Discordant
+### 0.1.0 - Renamed to Discordant
 
 - Added commands for channel management (get, set, new, remove)
 - Added Get-DiscordRole
