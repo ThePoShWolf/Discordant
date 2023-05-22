@@ -9,7 +9,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'Discord.Net.PowerShell.psm1'
+    RootModule        = 'Discordant.psm1'
 
     # Version number of this module.
     ModuleVersion     = '0.0.1'
@@ -18,7 +18,7 @@
     # CompatiblePSEditions = @()
 
     # ID used to uniquely identify this module
-    GUID              = 'efd21c25-bfe9-4bd3-85d8-07330228d4e9'
+    GUID              = 'efd21c25-bfe9-4bd3-85d8-07330228d4e0'
 
     # Author of this module
     Author            = 'ThePoShWolf'
@@ -30,7 +30,7 @@
     Copyright         = '(c) ThePoShWolf. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description       = 'A PowerShell wrapper for Discord.Net'
+    Description       = 'A PowerShell module to manage Discord'
 
     # Minimum version of the PowerShell engine required by this module
     PowerShellVersion = '7.0'
@@ -60,10 +60,10 @@
     # ScriptsToProcess = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
-    TypesToProcess    = @('Discord.Net.PowerShell.types.ps1xml')
+    TypesToProcess    = @( 'Discordant.types.ps1xml' )
 
     # Format files (.ps1xml) to be loaded when importing this module
-    FormatsToProcess  = @( 'Discord.Net.PowerShell.format.ps1xml' )
+    FormatsToProcess  = @( 'Discordant.format.ps1xml' )
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
     # NestedModules = @()

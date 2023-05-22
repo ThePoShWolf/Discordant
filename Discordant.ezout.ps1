@@ -4,7 +4,7 @@ param (
     [string]$RelativeDestination = 'build'
 )
 $myFile = $MyInvocation.MyCommand.ScriptBlock.File
-$myModuleName = 'Discord.Net.PowerShell'
+$myModuleName = ($MyInvocation.MyCommand.Name.Split('.') | Select-Object -SkipLast 2) -join '.'
 $myRoot = $myFile | Split-Path
 Push-Location $myRoot
 $formatting = @(
@@ -12,8 +12,8 @@ $formatting = @(
     # or put them in a Formatting or Views directory
     foreach ($potentialDirectory in 'Formatting', 'Views') {
         Join-Path $myRoot $potentialDirectory |
-            Get-ChildItem -ea ignore |
-                Import-FormatView -FilePath { $_.Fullname }
+        Get-ChildItem -ea ignore |
+        Import-FormatView -FilePath { $_.Fullname }
     }
 )
 
@@ -29,8 +29,8 @@ $types = @(
     # Add your own Write-TypeView statements here
     # or declare them in the 'Types' directory
     Join-Path $myRoot Types |
-        Get-Item -ea ignore |
-            Import-TypeView
+    Get-Item -ea ignore |
+    Import-TypeView
 
 )
 

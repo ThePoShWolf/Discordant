@@ -67,7 +67,7 @@ task ModuleBuild Clean, {
     Copy-Item "$srcPath\$moduleName.psd1" -Destination $modulePath
 
     # Generate the formats
-    & $PSScriptRoot\Discord.Net.PowerShell.ezout.ps1 -RelativeDestination "build/$moduleName"
+    & $PSScriptRoot\$moduleName.ezout.ps1 -RelativeDestination "build/$moduleName"
 
     # Copy the tests
     foreach ($test in ($moduleScriptFiles | Where-Object { $_.FullName -match '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$' })) {
