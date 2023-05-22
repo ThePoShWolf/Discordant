@@ -115,7 +115,8 @@ Function Set-DiscordChannel {
             ParameterSetName = 'voiceChannel'
         )]
         [string]$RTCRegion,
-        [Discord.RequestOptions]$RequestOptions = $null
+        [Discord.RequestOptions]$RequestOptions = $null,
+        [switch]$Async
     )
     # Get the channel
     $channel = Get-DiscordChannel -ChannelId $ChannelId -GuildId $GuildId
@@ -144,6 +145,7 @@ Function Set-DiscordChannel {
     $action = [System.Action[Discord.TextChannelProperties]]$sb
     # call modifyAsync
     $task = $channel.ModifyAsync($action)
-    $task.Wait()
-    $task.Result
+    if (-not $Async.IsPresent) {
+        $task.Wait()
+    }
 }
