@@ -12,7 +12,7 @@ Retrieve Discord roles.
 
 ## SYNTAX
 
-### guildObj-channelId
+### guildObj-roleId
 ```
 Get-DiscordRole -Guild <RestGuild> -RoleId <UInt64> [<CommonParameters>]
 ```
@@ -22,7 +22,7 @@ Get-DiscordRole -Guild <RestGuild> -RoleId <UInt64> [<CommonParameters>]
 Get-DiscordRole -Guild <RestGuild> [<CommonParameters>]
 ```
 
-### guildId-channelId
+### guildId-roleId
 ```
 Get-DiscordRole -GuildId <UInt64> -RoleId <UInt64> [<CommonParameters>]
 ```
@@ -62,7 +62,7 @@ This can be created with Get-DiscordGuild
 
 ```yaml
 Type: RestGuild
-Parameter Sets: guildObj-channelId, guildObj-all
+Parameter Sets: guildObj-roleId, guildObj-all
 Aliases:
 
 Required: True
@@ -77,7 +77,7 @@ The Id of the guild.
 
 ```yaml
 Type: UInt64
-Parameter Sets: guildId-channelId, guildId-all
+Parameter Sets: guildId-roleId, guildId-all
 Aliases:
 
 Required: True
@@ -92,7 +92,7 @@ The Id of the role.
 
 ```yaml
 Type: UInt64
-Parameter Sets: guildObj-channelId, guildId-channelId
+Parameter Sets: guildObj-roleId, guildId-roleId
 Aliases:
 
 Required: True
