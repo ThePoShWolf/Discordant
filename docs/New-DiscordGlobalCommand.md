@@ -18,7 +18,9 @@ New-DiscordGlobalCommand [[-Type] <ApplicationCommandType>] [-Name] <String> [-D
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new globally scoped command.
+
+For information on global vs guild commands, see: https://discord.com/developers/docs/interactions/application-commands#registering-a-command
 
 ## EXAMPLES
 
@@ -32,7 +34,7 @@ New-DiscordGlobalCommand [[-Type] <ApplicationCommandType>] [-Name] <String> [-D
 ## PARAMETERS
 
 ### -Description
-{{ Fill Description Description }}
+The description of the command.
 
 ```yaml
 Type: String
@@ -47,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the command. This is what shows up in Discord.
 
 ```yaml
 Type: String
@@ -62,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+Sets the command type.
 
 ```yaml
 Type: ApplicationCommandType
