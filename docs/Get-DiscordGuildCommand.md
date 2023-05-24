@@ -35,21 +35,30 @@ Get-DiscordGuildCommand -Guild <RestGuild> [-RequestOptions <RequestOptions>] [<
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all guild scoped commands that are specific to the bot.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordGuildCommand -Guild $guild
 ```
 
-{{ Add example description here }}
+Returns all guild commands for the $guild.
+
+### Example 2
+```powershell
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordGuildCommand -GuildId 'guildid' -CommandId 'commandid'
+```
+
+Returns the command with Id 'commandid' in the guild 'guildid'.
 
 ## PARAMETERS
 
 ### -CommandId
-{{ Fill CommandId Description }}
+The Id of the command.
 
 ```yaml
 Type: UInt64
@@ -64,7 +73,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild object, can be returned with Get-DiscordGuild.
+
+Specify this or -GuildId.
 
 ```yaml
 Type: RestGuild
@@ -79,7 +90,9 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The Guild's Id.
+
+Specify this or -Guild.
 
 ```yaml
 Type: UInt64
@@ -94,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
