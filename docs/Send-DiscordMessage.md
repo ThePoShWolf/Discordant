@@ -31,21 +31,25 @@ Send-DiscordMessage -Channel <RestTextChannel> [-RequestOptions <RequestOptions>
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sends a message to a Discord channel.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select -First 1
+$channels = Get-DiscordChannel -Guild $guild
+Send-Message -Guild $guild -ChannelId $channels[0].Id -MessageText 'Hello from Discordant'
 ```
 
-{{ Add example description here }}
+Sends a message to the first channel of the first guild.
 
 ## PARAMETERS
 
 ### -Channel
-{{ Fill Channel Description }}
+The channel.
+
+Can be created with Get-DiscordChannel.
 
 ```yaml
 Type: RestTextChannel
@@ -60,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -ChannelId
-{{ Fill ChannelId Description }}
+The channel Id.
 
 ```yaml
 Type: UInt64
@@ -75,7 +79,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild.
+
+Can be created with Get-DiscordGuild.
 
 ```yaml
 Type: RestGuild
@@ -90,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The guild Id.
 
 ```yaml
 Type: UInt64
@@ -105,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -MessageText
-{{ Fill MessageText Description }}
+The message to send.
 
 ```yaml
 Type: String
@@ -120,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
