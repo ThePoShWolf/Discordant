@@ -33,21 +33,32 @@ Get-DiscordRole -GuildId <UInt64> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all roles for a guild or a role by Id.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordRole -Guild $guild
 ```
 
-{{ Add example description here }}
+Returns all Discord roles.
+
+### Example 2
+```powershell
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordRole -GuildId 'guildid' -RoleId 'roleid'
+```
+
+Returns the Discord role with Id 'roleid' from the guild 'guildid'.
 
 ## PARAMETERS
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild object.
+
+This can be created with Get-DiscordGuild
 
 ```yaml
 Type: RestGuild
@@ -62,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The Id of the guild.
 
 ```yaml
 Type: UInt64
@@ -77,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleId
-{{ Fill RoleId Description }}
+The Id of the role.
 
 ```yaml
 Type: UInt64
