@@ -23,21 +23,28 @@ Get-DiscordGuild [-Id <UInt64>] [-RequestOptions <RequestOptions>] [<CommonParam
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all guilds (servers) that the authentication context has access to or a specific guild by ID.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+Get-DiscordGuild
 ```
 
-{{ Add example description here }}
+Returns all guilds that the authentication context has access to.
+
+### Example 2
+```powershell
+Get-DiscordGuild -Id '<id>'
+```
+
+Returns the guild with Id '<id>'.
 
 ## PARAMETERS
 
 ### -Id
-{{ Fill Id Description }}
+The guild Id.
 
 ```yaml
 Type: UInt64
@@ -52,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
