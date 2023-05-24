@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-DiscordInteraction
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Validate a Discord interaction as a bot.
 
 ## SYNTAX
 

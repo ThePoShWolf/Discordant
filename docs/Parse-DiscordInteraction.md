@@ -8,7 +8,7 @@ schema: 2.0.0
 # Parse-DiscordInteraction
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Parse a Discord interaction as a bot.
 
 ## SYNTAX
 

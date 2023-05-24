@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-DiscordGuildCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Retrieve Discord Guild scoped commands for a guild.
 
 ## SYNTAX
 

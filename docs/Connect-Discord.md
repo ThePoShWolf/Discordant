@@ -8,7 +8,7 @@ schema: 2.0.0
 # Connect-Discord
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Authenticate to Discord.
 
 ## SYNTAX
 

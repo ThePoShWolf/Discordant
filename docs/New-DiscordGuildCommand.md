@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-DiscordGuildCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a Discord guild scoped command.
 
 ## SYNTAX
 

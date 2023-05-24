@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-DiscordSlashCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a Discord slash command for use by New-Discord*Command
 
 ## SYNTAX
 

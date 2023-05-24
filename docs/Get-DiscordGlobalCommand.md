@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-DiscordGlobalCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Retrieve global commands for a bot.
 
 ## SYNTAX
 

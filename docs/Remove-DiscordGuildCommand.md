@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-DiscordGuildCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Delete a Discord guild scoped bot command.
 
 ## SYNTAX
 

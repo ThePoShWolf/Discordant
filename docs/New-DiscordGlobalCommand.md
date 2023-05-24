@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-DiscordGlobalCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a new Discord global scoped command.
 
 ## SYNTAX
 

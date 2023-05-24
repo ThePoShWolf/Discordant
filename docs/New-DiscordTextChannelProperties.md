@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-DiscordTextChannelProperties
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Create a Discord text channel properties object for use by New-DiscordChannel
 
 ## SYNTAX
 

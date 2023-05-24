@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-DiscordChannel
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Delete a Discord channel.
 
 ## SYNTAX
 

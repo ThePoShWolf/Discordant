@@ -8,7 +8,7 @@ schema: 2.0.0
 # Send-DiscordMessage
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Send a message.
 
 ## SYNTAX
 

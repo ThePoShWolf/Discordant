@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-DiscordChannel
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Update a Discord channel.
 
 ## SYNTAX
 

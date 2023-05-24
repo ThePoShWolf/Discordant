@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-DiscordChannel
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Retrieve Discord channels for a given Guild.
 
 ## SYNTAX
 

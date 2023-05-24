@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-DiscordRole
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Retrieve Discord roles.
 
 ## SYNTAX
 
