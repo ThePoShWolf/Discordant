@@ -23,21 +23,22 @@ Connect-Discord [-SocketClient] [-TokenType <TokenType>] [-Token <String>] [-Qui
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Authentication must be run prior to any other commands.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Connect-Discord -RestClient -TokenType Bot -Token '<token>'
+LoggedIn
 ```
 
-{{ Add example description here }}
+Authenticates to Discord as a bot.
 
 ## PARAMETERS
 
 ### -Quiet
-{{ Fill Quiet Description }}
+Silences output.
 
 ```yaml
 Type: SwitchParameter
@@ -52,7 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestClient
-{{ Fill RestClient Description }}
+Logs in via the Rest Client. This is the recommended and tested client.
 
 ```yaml
 Type: SwitchParameter
@@ -67,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -SocketClient
-{{ Fill SocketClient Description }}
+Logs in via the Socket Client. This is not tested, but the underlying SDK supports it.
 
 ```yaml
 Type: SwitchParameter
@@ -82,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -Token
-{{ Fill Token Description }}
+The authentication token. In the case of a bot, the bot's token.
 
 ```yaml
 Type: String
@@ -97,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -TokenType
-{{ Fill TokenType Description }}
+Specify the type of token that you are providing. Bearer, Bot, or Webhook.
 
 ```yaml
 Type: TokenType
