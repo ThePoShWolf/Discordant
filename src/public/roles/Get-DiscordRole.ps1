@@ -11,7 +11,7 @@ Function Get-DiscordRole {
         )]
         [Parameter(
             Mandatory,
-            ParameterSetName = 'guildObj-channelId'
+            ParameterSetName = 'guildObj-roleId'
         )]
         [Discord.Rest.RestGuild]$Guild,
         [Parameter(
@@ -20,16 +20,16 @@ Function Get-DiscordRole {
         )]
         [Parameter(
             Mandatory,
-            ParameterSetName = 'guildId-channelId'
+            ParameterSetName = 'guildId-roleId'
         )]
         [uint64]$GuildId,
         [Parameter(
             Mandatory,
-            ParameterSetName = 'guildObj-channelId'
+            ParameterSetName = 'guildObj-roleId'
         )]
         [Parameter(
             Mandatory,
-            ParameterSetName = 'guildId-channelId'
+            ParameterSetName = 'guildId-roleId'
         )]
         [uint64]$RoleId
     )
