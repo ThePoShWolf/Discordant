@@ -37,21 +37,24 @@ New-DiscordChannel -GuildId <UInt64> [-TextChannel] [-TextChannelProperties <Tex
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+This creates a Discord channel. The channel being a voice or text channel.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select-Object -First 1
+New-DiscordChannel -Guild $guild -TextChannel -Name 'discordant-channel'
 ```
 
-{{ Add example description here }}
+Creates a new text channel called 'discordant-channel'
 
 ## PARAMETERS
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild.
+
+This can be created with Get-DiscordGuild
 
 ```yaml
 Type: RestGuild
@@ -66,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The Id of the guild.
 
 ```yaml
 Type: UInt64
@@ -81,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the channel.
 
 ```yaml
 Type: String
@@ -96,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -TextChannel
-{{ Fill TextChannel Description }}
+If specified, creates a text channel.
 
 ```yaml
 Type: SwitchParameter
@@ -111,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -TextChannelProperties
-{{ Fill TextChannelProperties Description }}
+This takes a TextChannelProperties object which can be created with New-DiscordTextChannelProperties.
 
 ```yaml
 Type: TextChannelProperties
@@ -126,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -VoiceChannel
-{{ Fill VoiceChannel Description }}
+If specified, creates a voice channel.
 
 ```yaml
 Type: SwitchParameter
@@ -141,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -VoiceChannelProperties
-{{ Fill VoiceChannelProperties Description }}
+This takes a VoiceChannelProperties object which can be created with New-DiscordVoiceChannelProperties.
 
 ```yaml
 Type: VoiceChannelProperties
