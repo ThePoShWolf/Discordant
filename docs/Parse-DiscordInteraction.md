@@ -24,7 +24,7 @@ Parse-DiscordInteraction [[-PublicKey] <String>] [[-Signature] <String>] [[-Time
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

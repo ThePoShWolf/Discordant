@@ -29,7 +29,7 @@ Authentication must be run prior to any other commands.
 
 ### Example 1
 ```powershell
-PS C:\> Connect-Discord -RestClient -TokenType Bot -Token '<token>'
+Connect-Discord -RestClient -TokenType Bot -Token '<token>'
 LoggedIn
 ```
 

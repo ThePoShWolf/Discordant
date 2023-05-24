@@ -24,7 +24,7 @@ New-DiscordSlashCommandOption [-Name] <String> [[-Description] <String>] [-IsAut
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

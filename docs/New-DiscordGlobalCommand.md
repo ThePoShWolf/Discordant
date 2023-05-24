@@ -24,7 +24,7 @@ New-DiscordGlobalCommand [[-Type] <ApplicationCommandType>] [-Name] <String> [-D
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

@@ -35,13 +35,15 @@ Get-DiscordChannel -GuildId <UInt64> [-RequestOptions <RequestOptions>] [<Common
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+For a given guild (server) returns either all channels or a channel by ID.
+
+The guild can be specified by a guild object (Get-DiscordGuild) or by ID.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

@@ -31,7 +31,7 @@ New-DiscordGuildCommand -Guild <RestGuild> [-Type <ApplicationCommandType>] -Nam
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

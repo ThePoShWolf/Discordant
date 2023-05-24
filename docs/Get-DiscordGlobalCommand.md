@@ -29,7 +29,7 @@ Get-DiscordGlobalCommand [-Id <UInt64>] [-RequestOptions <RequestOptions>] [<Com
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}

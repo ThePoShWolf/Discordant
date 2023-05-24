@@ -41,7 +41,7 @@ Set-DiscordChannel -ChannelId <UInt64> -GuildId <UInt64> [-Name <String>] [-Posi
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+{{ Add example code here }}
 ```
 
 {{ Add example description here }}
