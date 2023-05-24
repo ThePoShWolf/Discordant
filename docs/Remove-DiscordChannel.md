@@ -23,21 +23,23 @@ Remove-DiscordChannel -GuildId <String> -ChannelId <UInt64> [-Async] [<CommonPar
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Deletes a Discord channel.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select -First 1
+$channel = Get-DiscordChannel -Guild $guild | Select -First 1
+Remove-DiscordChannel -Guild $guild -ChannelId $channel.ChannelId
 ```
 
-{{ Add example description here }}
+Removes the first channel in the first guild.
 
 ## PARAMETERS
 
 ### -Async
-{{ Fill Async Description }}
+If specified, runs the command async.
 
 ```yaml
 Type: SwitchParameter
@@ -52,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### -ChannelId
-{{ Fill ChannelId Description }}
+The Id of the channel.
 
 ```yaml
 Type: UInt64
@@ -67,7 +69,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild.
+
+Can be created with Get-DiscordGuild.
 
 ```yaml
 Type: RestGuild
@@ -82,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The Id of the guild.
 
 ```yaml
 Type: String
