@@ -26,7 +26,7 @@ task DocBuild ModuleBuild, {
     if (-not (Test-Path $docPath)) {
         New-Item $docPath -ItemType Directory
     }
-    #New-ExternalHelp $docPath -OutputPath "$modulePath\EN-US"
+    New-ExternalHelp $docPath -OutputPath "$modulePath\EN-US"
 }
 
 # Build the module
@@ -65,6 +65,9 @@ task ModuleBuild Clean, {
 
     # Copy the manifest
     Copy-Item "$srcPath\$moduleName.psd1" -Destination $modulePath
+
+    # Generate the formats
+    & $PSScriptRoot\$moduleName.ezout.ps1 -RelativeDestination "build/$moduleName"
 
     # Copy the tests
     foreach ($test in ($moduleScriptFiles | Where-Object { $_.FullName -match '(\\|\/)tests(\\|\/)[^\.]+\.tests\.ps1$' })) {

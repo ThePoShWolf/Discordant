@@ -4,7 +4,7 @@
 #>
 
 # Load Assemblies
-
-Get-ChildItem $PSScriptRoot\lib\*.dll | ForEach-Object {
+$libPath = Join-Path $PSScriptRoot lib
+Get-ChildItem $libPath -Filter *.dll | ForEach-Object {
     Add-Type -Path $_.FullName
 }

@@ -2,7 +2,7 @@ Function Get-DiscordChannel {
     [OutputType([Discord.Rest.RestGuildChannel[]], ParameterSetName = 'guildObj-all')]
     [OutputType([Discord.Rest.RestGuildChannel[]], ParameterSetName = 'guildId-all')]
     [OutputType([Discord.Rest.RestGuildChannel], ParameterSetName = 'guildObj-channelId')]
-    [OutputType([Discord.Rest.RestGuildChannel], ParameterSetName = 'guildId-channelId')]#>
+    [OutputType([Discord.Rest.RestGuildChannel], ParameterSetName = 'guildId-channelId')]
     [cmdletbinding()]
     param (
         [Parameter(
@@ -44,5 +44,5 @@ Function Get-DiscordChannel {
         $Guild.GetChannelAsync($ChannelId, $RequestOptions)
     }
     $task.Wait()
-    $task.Result
+    $task.Result | Sort-Object { $_.GetType().Name }
 }

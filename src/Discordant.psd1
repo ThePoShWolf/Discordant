@@ -9,7 +9,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'Discord.Net.PowerShell.psm1'
+    RootModule        = 'Discordant.psm1'
 
     # Version number of this module.
     ModuleVersion     = '0.0.1'
@@ -18,7 +18,7 @@
     # CompatiblePSEditions = @()
 
     # ID used to uniquely identify this module
-    GUID              = 'efd21c25-bfe9-4bd3-85d8-07330228d4e9'
+    GUID              = 'efd21c25-bfe9-4bd3-85d8-07330228d4e0'
 
     # Author of this module
     Author            = 'ThePoShWolf'
@@ -30,7 +30,7 @@
     Copyright         = '(c) ThePoShWolf. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description       = 'A PowerShell wrapper for Discord.Net'
+    Description       = 'A PowerShell module to manage Discord'
 
     # Minimum version of the PowerShell engine required by this module
     PowerShellVersion = '7.0'
@@ -60,10 +60,10 @@
     # ScriptsToProcess = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
-    # TypesToProcess = @()
+    TypesToProcess    = @( 'Discordant.types.ps1xml' )
 
     # Format files (.ps1xml) to be loaded when importing this module
-    # FormatsToProcess = @()
+    FormatsToProcess  = @( 'Discordant.format.ps1xml' )
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
     # NestedModules = @()
@@ -98,10 +98,10 @@
             # Tags = @()
 
             # A URL to the license for this module.
-            # LicenseUri = ''
+            LicenseUri = 'https://github.com/ThePoShWolf/Discordant/blob/main/LICENSE'
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
+            ProjectUri = 'https://github.com/ThePoShWolf/Discordant'
 
             # A URL to an icon representing this module.
             # IconUri = ''

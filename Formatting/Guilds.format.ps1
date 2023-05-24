@@ -1,0 +1,1 @@
+Write-FormatView -TypeName Discord.Rest.RestGuild -Property @('GuildId', 'Name', 'Description') -AutoSize

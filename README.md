@@ -1,30 +1,66 @@
-# Discord.Net.PowerShell
+# Discordant
 
-PowerShell wrapper for [Discord.Net](https://github.com/discord-net/Discord.Net).
+**(fka Discord.Net.PowerShell)**
 
-This module was originally developed for personal use, but after presenting at the PowerShell Summit 2023 about a Discord Bot built in Azure Functions, I decided to rush this out and published it. It has a lot of rough edges, but supports enough things to manage a Discord bot. More functionality and polish will be added.
+PowerShell module for managing Discord, including interactions. The module is built on top of [Discord.Net](https://github.com/discord-net/Discord.Net).
 
-PRs encouraged!
+This module was originally designed to provide the bare minimum functionality to support a Discord bot in PowerShell. However, there seems to be an interest in Discord management from PowerShell so this module is being extended to provide additional functionality.
+
+If there is a feature you need, please submit an issue and/or submit a PR.
+
+## TODO
+
+Prioritized:
+
+- Add docs (PlatyPS)
+
+Other:
+
+- User management
+- Role management
+- Webhook management
+- Per type channel management (category, text, voice)
+- Unit tests
+- Your request here
+
+## Functionality Overview
+
+As of v0.1.0:
+
+- Manage channels (add, get, remove, update)
+- Get roles
+- Get Guilds
+- Manage guild commands (get, create, remove)
+- Test and parse interactions
+- Send a message
 
 ## Installation
 
 ```powershell
-Install-Module Discord.Net.PowerShell
+Install-Module Discordant
 ```
 
-## Example usage
+## Authentication
+
+At this time, all testing is done via a bot with full admin permissions to a test Discord server. When the docs are written, each cmdlet will include the required permissions in order to execute.
+
+Authentication is done with:
 
 ```powershell
 # Authenticate with bot token (from Discord dev portal):
 Connect-Discord -RestClient -TokenType Bot -Token '<token>'
+```
 
+Other authentications methods are supported by the underlying SDK, but have not been tested. Please open an issue if you run into problems.
+
+## Example usage
+
+```powershell
 # Get your guild (server):
 $guild = Get-DiscordGuild | Where-Object { $_.Name -eq 'Bot Testing' }
 
-# Create a slash command with no parameters
-New-DiscordGuildCommand -Name 'hello' -Description "Say hello to the bot" -Guild $guild -CommandBuilder (
-    New-DiscordSlashCommand -Name 'hello' -Description 'Say Hello to the bot'
-)
+# Get channels
+Get-DiscordChannel -Guild $guild
 
 # Create a slash command with a single parameter
 New-DiscordGuildCommand -Name 'start-server' -Description 'Start a server' -Guild $guild -CommandBuilder (
@@ -33,3 +69,13 @@ New-DiscordGuildCommand -Name 'start-server' -Description 'Start a server' -Guil
     )
 )
 ```
+
+## Changelog
+
+### 0.1.0 - Renamed to Discordant
+
+- Added commands for channel management (get, set, new, remove)
+- Added Get-DiscordRole
+- Added output formats
+
+### 0.0.1 - Initial Release
