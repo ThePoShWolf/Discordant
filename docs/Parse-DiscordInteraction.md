@@ -18,21 +18,21 @@ Parse-DiscordInteraction [[-PublicKey] <String>] [[-Signature] <String>] [[-Time
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Used for a Discord bot to parse an interaction.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+Parse-DiscordInteraction -PublicKey $pk -Signature $sig -Timestamp $ts -Body $body
 ```
 
-{{ Add example description here }}
+Parses a Discord interaction if passed the bot's public key, the signature of the body, the timestamp, and the body itself.
 
 ## PARAMETERS
 
 ### -Body
-{{ Fill Body Description }}
+The body of the interaction.
 
 ```yaml
 Type: String
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicKey
-{{ Fill PublicKey Description }}
+The bot's public key.
 
 ```yaml
 Type: String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Signature
-{{ Fill Signature Description }}
+The signature of the interaction.
 
 ```yaml
 Type: String
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeStamp
-{{ Fill TimeStamp Description }}
+The timestamp on the interaction.
 
 ```yaml
 Type: String
