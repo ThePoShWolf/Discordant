@@ -30,6 +30,7 @@ Authentication must be run prior to any other commands.
 ### Example 1
 ```powershell
 Connect-Discord -RestClient -TokenType Bot -Token '<token>'
+
 LoggedIn
 ```
 
