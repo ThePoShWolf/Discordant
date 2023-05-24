@@ -23,21 +23,32 @@ Get-DiscordGlobalCommand [-Id <UInt64>] [-RequestOptions <RequestOptions>] [<Com
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all global commands for a bot or global commands by ID.
+
+The bot is inferred by how the module has authenticated.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+Get-DiscordGlobalCommand
 ```
 
-{{ Add example description here }}
+This will return all global commands for the bot.
+
+### Example 2
+```powershell
+Get-DiscordGlobalCommand -Id '<id>'
+```
+
+Returns a specific global command.
+
+This will return all global commands for the bot.
 
 ## PARAMETERS
 
 ### -Id
-{{ Fill Id Description }}
+The global commands' Id
 
 ```yaml
 Type: UInt64
@@ -52,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
