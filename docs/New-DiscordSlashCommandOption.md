@@ -18,21 +18,25 @@ New-DiscordSlashCommandOption [-Name] <String> [[-Description] <String>] [-IsAut
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new SlashCommandOptionBuilder for use by the New-DiscordSlashCommand. This is what creates parameters for a slash command.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+New-DiscordGuildCommand -Name 'get-status' -Description 'Get the status of a server' -Guild $guild -CommandBuilder (
+    New-DiscordSlashCommand -Name 'get-status' -Description 'Get the status of a server' -Options @(
+        (New-DiscordSlashCommandOption -Name 'server' -Description 'The selected server' -Type String)
+    )
+)
 ```
 
-{{ Add example description here }}
+This creates a guild command called 'get-status' with a single string parameter called 'server'.
 
 ## PARAMETERS
 
 ### -Choices
-{{ Fill Choices Description }}
+This accepts a hashtable of choices.
 
 ```yaml
 Type: Hashtable
@@ -47,7 +51,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-{{ Fill Description Description }}
+The description of the command option.
 
 ```yaml
 Type: String
@@ -62,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAutocomplete
-{{ Fill IsAutocomplete Description }}
+Allows the command option to auto complete.
 
 ```yaml
 Type: SwitchParameter
@@ -77,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the command option.
 
 ```yaml
 Type: String
@@ -92,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Required
-{{ Fill Required Description }}
+Makes the option required.
 
 ```yaml
 Type: SwitchParameter
@@ -107,7 +111,9 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+The type of option.
+
+One of the following: SubCommand, SubCommandGroup, String, Integer, Boolean, User, Channel, Role, Mentionable, Number, Attachment
 
 ```yaml
 Type: ApplicationCommandOptionType
