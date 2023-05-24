@@ -18,21 +18,23 @@ New-DiscordSlashCommand [-Name] <String> [[-Description] <String>] [[-Options] <
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a Discord Slash command for use by the New-Discord*Commands. This uses SlashCommandBuild of the Discord.Net SDK.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+New-DiscordGuildCommand -Guild (Get-DiscordGuild)[0] -Name 'hello' -Description 'Say hello to the bot' -CommandBuilder (
+    New-DiscordSlashCommand -Name 'hello' -Description 'Say Hello to the bot'
+)
 ```
 
-{{ Add example description here }}
+Creates a Discord slash command called 'hello' with the default type of Slash.
 
 ## PARAMETERS
 
 ### -Description
-{{ Fill Description Description }}
+The command's description.
 
 ```yaml
 Type: String
@@ -47,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The command's name.
 
 ```yaml
 Type: String
@@ -62,7 +64,9 @@ Accept wildcard characters: False
 ```
 
 ### -Options
-{{ Fill Options Description }}
+Options (parameters) for the slash command.
+
+Use the New-DiscordSlashCommandOption command.
 
 ```yaml
 Type: SlashCommandOptionBuilder[]
