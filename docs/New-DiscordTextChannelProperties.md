@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-DiscordTextChannelProperties
 
 ## SYNOPSIS
-Create a Discord text channel properties object for use by New-DiscordChannel
+Create a Discord TextChannelProperties object for use by New-DiscordChannel
 
 ## SYNTAX
 
@@ -19,21 +19,23 @@ New-DiscordTextChannelProperties [[-Topic] <String>] [-Nsfw] [[-SlowModeInterval
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Create a Discord TextChannelProperties object for use by New-DiscordChannel
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select -First 1
+$tcp = New-TextChannelProperties -Position 0
+New-DiscordChannel -Guild $guild -TextChannel -Name 'channel-name' -TextChannelProperties $tcp
 ```
 
-{{ Add example description here }}
+This will create a channel called 'channel-name' with Position 0.
 
 ## PARAMETERS
 
 ### -Archived
-{{ Fill Archived Description }}
+Archives the channel.
 
 ```yaml
 Type: SwitchParameter
@@ -48,7 +50,7 @@ Accept wildcard characters: False
 ```
 
 ### -CategoryId
-{{ Fill CategoryId Description }}
+The Id of the category (header) to place the channel.
 
 ```yaml
 Type: Int64
@@ -63,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locked
-{{ Fill Locked Description }}
+Locks the channel.
 
 ```yaml
 Type: SwitchParameter
@@ -78,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the channel.
 
 ```yaml
 Type: String
@@ -93,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nsfw
-{{ Fill Nsfw Description }}
+Considers the channel NSFW.
 
 ```yaml
 Type: SwitchParameter
@@ -108,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Overwrite
-{{ Fill Overwrite Description }}
+Applies permissions overwrites.
 
 ```yaml
 Type: Overwrite
@@ -123,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Position
-{{ Fill Position Description }}
+Sets the channel position.
 
 ```yaml
 Type: Int32
@@ -138,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -SlowModeInterval
-{{ Fill SlowModeInterval Description }}
+If non-zero, enables slow mode at the specified interval.
 
 ```yaml
 Type: Int32
@@ -153,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Topic
-{{ Fill Topic Description }}
+Sets the channel topic
 
 ```yaml
 Type: String
