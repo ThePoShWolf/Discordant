@@ -35,21 +35,23 @@ Set-DiscordChannel -ChannelId <UInt64> -GuildId <UInt64> [-Name <String>] [-Posi
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Updates a Discord channel.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select -First 1
+$channel = Get-DiscordChannel -Guild $guild
+Set-DiscordChannel -GuildId $guild.Id -ChannelId $channel.Id -Topic 'new topic'
 ```
 
-{{ Add example description here }}
+Updates the topic of a channel.
 
 ## PARAMETERS
 
 ### -Async
-{{ Fill Async Description }}
+Runs the command async.
 
 ```yaml
 Type: SwitchParameter
@@ -64,7 +66,9 @@ Accept wildcard characters: False
 ```
 
 ### -AutoArchiveDuration
-{{ Fill AutoArchiveDuration Description }}
+Sets the auto archive duration for a text channel.
+
+Values: OneHour, OneDay, ThreeDays, OneWeek
 
 ```yaml
 Type: ThreadArchiveDuration
@@ -80,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Bitrate
-{{ Fill Bitrate Description }}
+Sets the bitrate for a voice channel.
 
 ```yaml
 Type: Int32
@@ -95,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -CategoryId
-{{ Fill CategoryId Description }}
+Sets the channel's category.
 
 ```yaml
 Type: UInt64
@@ -110,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -ChannelId
-{{ Fill ChannelId Description }}
+The channel Id.
 
 ```yaml
 Type: UInt64
@@ -125,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The guild Id.
 
 ```yaml
 Type: UInt64
@@ -140,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsNsfw
-{{ Fill IsNsfw Description }}
+Enables or disables the NSFW flag.
 
 ```yaml
 Type: Boolean
@@ -155,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locked
-{{ Fill Locked Description }}
+Sets the locked flag.
 
 ```yaml
 Type: Boolean
@@ -170,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+Sets the channel name.
 
 ```yaml
 Type: String
@@ -185,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionOverwrites
-{{ Fill PermissionOverwrites Description }}
+Applies permissions overwrites.
 
 ```yaml
 Type: OverwritePermissions
@@ -200,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -Position
-{{ Fill Position Description }}
+Sets the channel's position.
 
 ```yaml
 Type: Int32
@@ -215,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -RTCRegion
-{{ Fill RTCRegion Description }}
+Sets a voice channel's region.
 
 ```yaml
 Type: String
@@ -230,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
@@ -245,7 +249,9 @@ Accept wildcard characters: False
 ```
 
 ### -SlowModeInterval
-{{ Fill SlowModeInterval Description }}
+Sets a text channel's slow mode interval.
+
+If 0, disables slow mode.
 
 ```yaml
 Type: Int32
@@ -260,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -Topic
-{{ Fill Topic Description }}
+Sets the channel's topic.
 
 ```yaml
 Type: String
@@ -275,7 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserLimit
-{{ Fill UserLimit Description }}
+Sets a voice channel's user limit.
 
 ```yaml
 Type: Int32
