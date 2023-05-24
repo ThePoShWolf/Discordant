@@ -43,15 +43,24 @@ The guild can be specified by a guild object (Get-DiscordGuild) or by ID.
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordGuildChannel -Guild $guild
 ```
 
-{{ Add example description here }}
+This will return all channels on $guild
+
+### Example 2
+```powershell
+$guild = Get-DiscordGuild | Select-Object -First 1
+Get-DiscordGuildChannel -Guild $guild -ChannelId '<id>'
+```
+
+This will return the channel '<id>' from the $guild guild.
 
 ## PARAMETERS
 
 ### -ChannelId
-{{ Fill ChannelId Description }}
+The ID of the channel to return.
 
 ```yaml
 Type: UInt64
@@ -66,7 +75,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The RestGuild object to reference for the guild.
+
+This can be created using Get-DiscordGuild.
 
 ```yaml
 Type: RestGuild
@@ -81,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The ID of the guild to return the channel from.
 
 ```yaml
 Type: UInt64
@@ -96,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestOptions
-{{ Fill RequestOptions Description }}
+This is a standard Discord API option.
 
 ```yaml
 Type: RequestOptions
