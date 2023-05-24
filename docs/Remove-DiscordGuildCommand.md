@@ -28,21 +28,25 @@ Remove-DiscordGuildCommand -Command <RestGuildCommand> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Removes a guild scoped command.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+$guild = Get-DiscordGuild | Select -First 1
+$guildCmds = Get-DiscordGuildCommand -Guild $guild
+Remove-DiscordGlobalCommand -Guild $guild -CommandId $guildCmds[0].Id
 ```
 
-{{ Add example description here }}
+Removes the first guild command from the first guild.
 
 ## PARAMETERS
 
 ### -Command
-{{ Fill Command Description }}
+The command.
+
+Can be created with Get-DiscordGuildCommand.
 
 ```yaml
 Type: RestGuildCommand
@@ -57,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommandId
-{{ Fill CommandId Description }}
+The Id of the command.
 
 ```yaml
 Type: UInt64
@@ -72,7 +76,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild.
+
+Can be created with Get-DiscordGuild.
 
 ```yaml
 Type: RestGuild
@@ -87,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The Id of the guild.
 
 ```yaml
 Type: UInt64
