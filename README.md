@@ -51,6 +51,8 @@ Authentication is done with:
 Connect-Discord -RestClient -TokenType Bot -Token '<token>'
 ```
 
+Other authentications methods are supported by the underlying SDK, but have not been tested. Please open an issue if you run into problems.
+
 ## Example usage
 
 ```powershell
