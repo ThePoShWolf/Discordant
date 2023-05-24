@@ -13,7 +13,7 @@ Function Remove-DiscordChannel {
         [string]$GuildId,
         [Parameter(Mandatory)]
         [ulong]$ChannelId,
-        [swtich]$Async
+        [switch]$Async
     )
     if ($PSCmdlet.ParameterSetName -eq 'guildId') {
         $guild = Get-DiscordGuild -Id $GuildId
