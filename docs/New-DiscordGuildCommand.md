@@ -25,21 +25,25 @@ New-DiscordGuildCommand -Guild <RestGuild> [-Type <ApplicationCommandType>] -Nam
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new guild scoped command.
+
+For information on global vs guild commands, see: https://discord.com/developers/docs/interactions/application-commands#registering-a-command
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-{{ Add example code here }}
+New-DiscordGuildCommand -Guild (Get-DiscordGuild)[0] -Name 'hello' -Description 'Say hello to the bot' -CommandBuilder (
+    New-DiscordSlashCommand -Name 'hello' -Description 'Say Hello to the bot'
+)
 ```
 
-{{ Add example description here }}
+Creates a Discord slash command called 'hello' with the default type of Slash.
 
 ## PARAMETERS
 
 ### -CommandBuilder
-{{ Fill CommandBuilder Description }}
+Can be created with New-DiscordSlashCommand
 
 ```yaml
 Type: SlashCommandBuilder
@@ -54,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-{{ Fill Description Description }}
+The description of the command.
 
 ```yaml
 Type: String
@@ -69,7 +73,9 @@ Accept wildcard characters: False
 ```
 
 ### -Guild
-{{ Fill Guild Description }}
+The guild to place the command in.
+
+This can be created with Get-DiscordGuild
 
 ```yaml
 Type: RestGuild
@@ -84,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -GuildId
-{{ Fill GuildId Description }}
+The ID of the guild.
 
 ```yaml
 Type: UInt64
@@ -99,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the command.
 
 ```yaml
 Type: String
@@ -114,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+The type of command. Defaults to Slash.
 
 ```yaml
 Type: ApplicationCommandType
