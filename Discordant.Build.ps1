@@ -26,7 +26,7 @@ task DocBuild ModuleBuild, {
     if (-not (Test-Path $docPath)) {
         New-Item $docPath -ItemType Directory
     }
-    #New-ExternalHelp $docPath -OutputPath "$modulePath\EN-US"
+    New-ExternalHelp $docPath -OutputPath "$modulePath\EN-US"
 }
 
 # Build the module
