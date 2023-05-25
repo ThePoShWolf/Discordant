@@ -10,16 +10,9 @@ If there is a feature you need, please submit an issue and/or submit a PR.
 
 ## TODO
 
-Prioritized:
-
-- Add docs (PlatyPS)
-
-Other:
-
 - User management
 - Role management
 - Webhook management
-- Per type channel management (category, text, voice)
 - Unit tests
 - Your request here
 
@@ -42,7 +35,7 @@ Install-Module Discordant
 
 ## Authentication
 
-At this time, all testing is done via a bot with full admin permissions to a test Discord server. When the docs are written, each cmdlet will include the required permissions in order to execute.
+At this time, all testing is done via a bot with full admin permissions to a test Discord server. You can create a bot in the [Discord developer portal](https://discord.com/developers) by first creating an application and then adding a bot to it. Then, go to the OAuth2 section to create a URL with the desired permissions which you will browse to and then add the bot to your server.
 
 Authentication is done with:
 
