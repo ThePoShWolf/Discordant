@@ -39,6 +39,9 @@ Function Get-DiscordGuildCommand {
         [UInt64]$CommandId,
         [Discord.RequestOptions]$RequestOptions
     )
+    if ($PSCmdlet.ParameterSetName -like 'guildObj-*') {
+        $GuildId = $Guild.Id
+    }
     $task = $DiscordClient.GetGuildApplicationCommands($GuildId, $RequestOptions)
     $task.Wait()
     if ($PSCmdlet.ParameterSetName -like '*all') {
