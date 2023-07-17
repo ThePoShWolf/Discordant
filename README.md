@@ -18,14 +18,14 @@ If there is a feature you need, please submit an issue and/or submit a PR.
 
 ## Functionality Overview
 
-As of v0.1.0:
+As of v0.1.2:
 
 - Manage channels (add, get, remove, update)
 - Get roles
 - Get Guilds
 - Manage guild commands (get, create, remove)
 - Test and parse interactions
-- Send a message
+- Send a message or a file
 
 ## Installation
 
