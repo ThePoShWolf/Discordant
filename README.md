@@ -65,6 +65,10 @@ New-DiscordGuildCommand -Name 'start-server' -Description 'Start a server' -Guil
 
 ## Changelog
 
+### 0.1.2 - Adds Send-DiscordFile
+
+- New cmdlet enables sending of files to a Discord text channel.
+
 ### 0.1.1 - Fixes Get-DiscordGuildCommand -Guild
 
 - See #2.
