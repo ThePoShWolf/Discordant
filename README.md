@@ -18,14 +18,14 @@ If there is a feature you need, please submit an issue and/or submit a PR.
 
 ## Functionality Overview
 
-As of v0.1.0:
+As of v0.1.2:
 
 - Manage channels (add, get, remove, update)
 - Get roles
 - Get Guilds
 - Manage guild commands (get, create, remove)
 - Test and parse interactions
-- Send a message
+- Send a message or a file
 
 ## Installation
 
@@ -64,6 +64,10 @@ New-DiscordGuildCommand -Name 'start-server' -Description 'Start a server' -Guil
 ```
 
 ## Changelog
+
+### 0.1.2 - Adds Send-DiscordFile
+
+- New cmdlet enables sending of files to a Discord text channel.
 
 ### 0.1.1 - Fixes Get-DiscordGuildCommand -Guild
 
